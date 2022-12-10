@@ -1,10 +1,8 @@
 package model;
 
 public class Meal extends Product {
-    private String name;
-    private float price;
 
-    public Meal(String name, float price, String description, String type) {
+    public Meal(String name, float price, String description) {
         super(name, price, description);
     }
 
