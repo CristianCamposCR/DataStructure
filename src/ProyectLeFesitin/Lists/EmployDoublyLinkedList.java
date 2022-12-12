@@ -34,9 +34,11 @@ public class EmployDoublyLinkedList extends DoublyList<Employ> {
     @Override
     public void printList() {
         DoublyNode<Employ> aux = this.getHead();
+        int count =1;
         while (aux != null) {
-            System.out.println("Waiter: " + aux.getData().getName() + " Position: " + aux.getData().getPosition());
+            System.out.println("Waiter ["+count+"]: " + aux.getData().getName() + " Position: " + aux.getData().getPosition());
             aux = (DoublyNode<Employ>) aux.getNext();
+            count++;
         }
 
     }

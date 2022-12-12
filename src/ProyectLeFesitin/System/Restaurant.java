@@ -4,6 +4,7 @@ import ProyectLeFesitin.Lists.DrinksCircularLinkedList;
 import ProyectLeFesitin.Lists.EmployDoublyLinkedList;
 import ProyectLeFesitin.Lists.MealDoblyCricularLinkedList;
 import ProyectLeFesitin.Lists.TableLinkedListSimple;
+import model.Employ;
 
 import java.util.Scanner;
 
@@ -23,6 +24,23 @@ public class Restaurant {
         listMeals.printList();
         System.out.println("Waiter");
         listEmploy.printList();
+
+        System.out.println("---------------------------------\nWelcome to LE FESTIN\n------------------------------");
+
+
+        listEmploy.printList();
+        System.out.println("Enter you number of employ ->");
+
+
+        Employ employ = listEmploy.searchByPosition(escanner.nextInt());
+
+        System.out.println("You are : " + employ.getName());
+
+
+
+
+
+
         switch (menu()) {
             case 1:
                 System.out.println("si jalo");
