@@ -15,8 +15,6 @@ public class MealDoblyCricularLinkedList extends CircularDoblyLinkedList<Meal> {
         this.insert(new Meal("Enchiladas", 67f, "Enchiladas verdes con queso crema y pollo", "N/A"));
     }
 
-
-
     //Metodos abstractos que vienen de la clase circulardoblylinkedlist
     @Override
     public void searchByValue(Meal data) {

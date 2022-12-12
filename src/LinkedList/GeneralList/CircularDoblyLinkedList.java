@@ -16,7 +16,7 @@ public abstract class CircularDoblyLinkedList<T> implements ILinkedList<T> {
         this.head = head;
     }
 
-    public Node<T> getHead(){
+    public DoublyNode<T> getHead(){
         return head;
     }
 
