@@ -1,7 +1,9 @@
 package ProyectLeFesitin.Lists;
 
 import LinkedList.GeneralList.List;
+import LinkedList.GeneralNodes.DoublyNode;
 import LinkedList.GeneralNodes.Node;
+import model.Employ;
 import model.Table;
 
 public class TableLinkedListSimple extends List<Table> {
@@ -15,9 +17,19 @@ public class TableLinkedListSimple extends List<Table> {
     }
 
     @Override
-    public void searchByValue(Table data) {
+    public  Table searchByPosition(int index) {
+        Node<Table> aux = this.getHead();
 
-    }
+        if (aux.getData() != null) {
+            while (aux != null && index != 1) {
+                aux = aux.getNext();
+                index--;
+            }
+            return aux.getData();
+        }
+
+        return null;
+    };
 
 
     @Override

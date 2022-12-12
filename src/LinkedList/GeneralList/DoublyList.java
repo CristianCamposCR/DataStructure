@@ -43,7 +43,7 @@ public  abstract  class DoublyList<T> implements ILinkedList<T> {
     }
 
 
-    public abstract Employ searchByPosition(int index);
+    public abstract T searchByPosition(int index) ;
 
     public abstract void  printList();
 }

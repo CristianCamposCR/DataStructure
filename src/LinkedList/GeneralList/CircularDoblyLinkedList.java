@@ -64,7 +64,7 @@ public abstract class CircularDoblyLinkedList<T> implements ILinkedList<T> {
 
 
     //metodos abstractos a implementar en otras clases
-    public abstract void searchByValue(T data);
+    public abstract T searchByPosition(int index) ;
 
     public abstract void printList();
 

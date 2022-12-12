@@ -44,8 +44,7 @@ public abstract class List<T>  implements ILinkedList<T> {
 
     }
 
-    public abstract void searchByValue(T data) ;
-
+    public abstract T searchByPosition(int index) ;
 
     public abstract void  printList();
 

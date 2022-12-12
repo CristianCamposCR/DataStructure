@@ -1,8 +1,11 @@
 package model;
 
+import ProyectLeFesitin.Lists.ProductQueue;
+
 public class Table {
     private int id;
     private boolean available;
+    private ProductQueue orders;
 
     public Table() {
     }

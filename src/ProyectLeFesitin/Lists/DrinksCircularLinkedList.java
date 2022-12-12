@@ -1,8 +1,10 @@
 package ProyectLeFesitin.Lists;
 
 import LinkedList.GeneralList.CircularLinkedList;
+import LinkedList.GeneralNodes.DoublyNode;
 import LinkedList.GeneralNodes.Node;
 import model.Drinks;
+import model.Employ;
 
 public class DrinksCircularLinkedList extends CircularLinkedList<Drinks> {
 
@@ -15,19 +17,30 @@ public class DrinksCircularLinkedList extends CircularLinkedList<Drinks> {
     }
 
     @Override
-    public void searchByValue(Drinks data) {
+    public Drinks searchByPosition(int index) {
+        Node<Drinks> aux = this.getHead();
 
+        if (aux.getData() != null) {
+            while (aux != null && index != 1) {
+                aux = aux.getNext();
+                index--;
+            }
+            return aux.getData();
+        }
+
+        return null;
     }
 
     @Override
     public void printList() {
-
         Node<Drinks>  aux = this.getHead();
+        int count = 1;
         while (aux.getNext() != this.getHead()){
-            System.out.println(aux.getData().toString() );
+            System.out.println("["+count+"] "+aux.getData().toString() );
             aux = aux.getNext();
+            count++;
         }
-        System.out.println(aux.getData().toString() );
+        System.out.println("["+count+"] "+ aux.getData().toString() );
 
 
 

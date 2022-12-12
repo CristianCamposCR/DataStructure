@@ -3,7 +3,7 @@ package StackAndQueue;
 import Interfaces.IQueue;
 import LinkedList.GeneralNodes.Node;
 
-public class QueueList<T> implements IQueue<T>  {
+public abstract class QueueList<T> implements IQueue<T>  {
 
     private Node<T> front , rear; //
     public QueueList() {
@@ -46,13 +46,19 @@ public class QueueList<T> implements IQueue<T>  {
 
         }
     } // deleted
+
+
     public void cleanQueue(){
         this.front = this.rear = null;
     }
-    public void printQueue(){
+    public abstract void printQueueorder();
+
+
+
+    /*public void printQueue(){
         Node<T> aux = this.front;
         if (this.front!=null)  System.out.println(aux);
         else System.out.println("There aren´t information");
         System.out.println();
-    }
+    }*/
 }

@@ -53,7 +53,7 @@ public abstract class CircularLinkedList<T> implements ILinkedList<T> {
         aux.setNext(this.head);
     }
 
-    public abstract void searchByValue(T data) ;
+    public abstract T searchByPosition(int index) ;
 
 
     public abstract void  printList();
