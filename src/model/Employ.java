@@ -1,18 +1,24 @@
 package model;
 
-public class Employ {
+public class Employ extends Person {
     private String rfc;
     private float salary;
     private String position;
 
-    public Employ() {
-    }
-
-    public Employ(String rfc, float salary, String position) {
+    public Employ(String name, String rfc, float salary, String position) {
+        super(name);
         this.rfc = rfc;
         this.salary = salary;
         this.position = position;
     }
+
+    public Employ(String name, String age, String genre, String feeling, String rfc, float salary, String position) {
+        super(name, age, genre, feeling);
+        this.rfc = rfc;
+        this.salary = salary;
+        this.position = position;
+    }
+
 
     public String getRfc() {
         return rfc;
