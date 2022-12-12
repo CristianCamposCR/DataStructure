@@ -3,11 +3,27 @@ package StackAndQueue;
 import Interfaces.IStack;
 import LinkedList.GeneralNodes.Node;
 
-public class LinkedStack<T> implements IStack<T> {
-    Node<T> top;
-    Node<T> fund;
+public abstract class LinkedStack<T> implements IStack<T> {
+    private  Node<T> top;
+    private  Node<T> fund;
 
     public LinkedStack() { this.top = this.fund=  null;    }
+
+    public Node<T> getTop() {
+        return top;
+    }
+
+    public void setTop(Node<T> top) {
+        this.top = top;
+    }
+
+    public Node<T> getFund() {
+        return fund;
+    }
+
+    public void setFund(Node<T> fund) {
+        this.fund = fund;
+    }
 
     public void push(T data){
         Node<T> newNode = new Node<>(data);  //create Node
@@ -19,15 +35,10 @@ public class LinkedStack<T> implements IStack<T> {
             this.top = newNode;
         }
     }
+
     public void pop(){ this.top  = this.top.getNext();  }
 
-    public void printStack(){
-        Node<T> aux = this.top;
-        while (aux!=null){
-            System.out.println(aux.getData());
-            aux = aux.getNext();
-        }
-    }
+    public abstract void printStack();
 
     public void clearStack(){
         Node<T> aux = this.top;

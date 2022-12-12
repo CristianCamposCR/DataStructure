@@ -9,15 +9,6 @@ public class ProductQueue extends QueueList<Product> {
 
 
     public ProductQueue() {
-
-        enqueue(new MealDoblyCricularLinkedList().getHead().getData());
-        enqueue(new MealDoblyCricularLinkedList().getHead().getData());
-        enqueue(new MealDoblyCricularLinkedList().getHead().getData());
-        enqueue(new MealDoblyCricularLinkedList().getHead().getData());
-        enqueue(new DrinksCircularLinkedList().getHead().getData());
-        enqueue(new DrinksCircularLinkedList().getHead().getData());
-        enqueue(new DrinksCircularLinkedList().getHead().getData());
-
     }
 
     @Override

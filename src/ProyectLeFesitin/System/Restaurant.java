@@ -2,12 +2,14 @@ package ProyectLeFesitin.System;
 
 import ProyectLeFesitin.Lists.*;
 import model.Employ;
+import model.MailBox;
 import model.Table;
 
 import java.util.Scanner;
 
 public class Restaurant {
     static TableLinkedListSimple tables = new TableLinkedListSimple();
+    static MailboxStack mails = new MailboxStack();
 
     public static void main(String[] args) {
         Scanner escanner = new Scanner(System.in).useDelimiter("\n");
@@ -23,7 +25,7 @@ public class Restaurant {
         System.out.println("Waiter");
         listEmploy.printList();*/
 
-        new ProductQueue().printQueueorder();
+        sendMailBox();
 
         System.out.println("---------------------------------\nWelcome to LE FESTIN\n------------------------------");
 
@@ -36,12 +38,7 @@ public class Restaurant {
         tables.printList();
 
 
-
-
-
-
     }
-
 
 
     public static Employ chooseEmploy() {
@@ -70,4 +67,21 @@ public class Restaurant {
         }
     }
 
+    public static void sendMailBox() {
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        mails.setCount(mails.getCount()+1);
+        int count = mails.getCount();
+        MailBox mailBox = new MailBox();
+        System.out.println("Hello and thanks for helping to better the software");
+        System.out.println("Enter your name or write anonimous: ");
+        mailBox.setFrom(scanner.next());
+        System.out.println("Enter the subject: ");
+        mailBox.setSubject(scanner.next());
+        System.out.println("Enter the text");
+        mailBox.setBody(scanner.next());
+        mailBox.setId(count);
+        mails.push(mailBox);
+
     }
+
+}
