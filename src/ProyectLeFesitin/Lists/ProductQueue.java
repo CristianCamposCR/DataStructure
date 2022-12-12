@@ -9,6 +9,7 @@ public class ProductQueue extends QueueList<Product> {
 
 
     public ProductQueue() {
+
     }
 
     @Override

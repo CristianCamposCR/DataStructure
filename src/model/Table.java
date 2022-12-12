@@ -7,12 +7,15 @@ public class Table {
     private boolean available;
     private ProductQueue orders;
 
+
     public Table() {
+        orders = new ProductQueue();
     }
 
     public Table(int id, boolean available) {
         this.id = id;
         this.available = available;
+        this.orders = new ProductQueue();
     }
 
     public int getId() {
@@ -29,6 +32,14 @@ public class Table {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public ProductQueue getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ProductQueue orders) {
+        this.orders = orders;
     }
 
     @Override
