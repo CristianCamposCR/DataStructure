@@ -42,7 +42,7 @@ public class Drinks extends Product {
     public String toString() {
         String text= "";
         String alcohol = alcoholic?"with alcohol": "without alcohol";
-        text = "Name: " + getName()+ "\tsize:" + size + " price: " + getPrice()+ ", description: '" + this.getDescription() + " " + alcohol + "' brand: " + brand +  '}';
+        text = "Name: " + getName()+ "\tsize:" + size + " price: " + getPrice()+ ", description: '" + this.getDescription() + " " + alcohol + "' brand: " + brand +  '.';
         return text;
     }
 

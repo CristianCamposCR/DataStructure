@@ -34,12 +34,15 @@ public class TableLinkedListSimple extends List<Table> {
 
     @Override
     public void printList() {
+        System.out.println("------------------------------------------");
+
         Node<Table> current = this.getHead();
         while (current!=null){
             String available = current.getData().isAvailable()?"is":"isn't";
             System.out.println("The table \""+current.getData().getId()+"\" " +available + " available"  );
             current = current.getNext();
         }
+        System.out.println("------------------------------------------");
 
     }
 }

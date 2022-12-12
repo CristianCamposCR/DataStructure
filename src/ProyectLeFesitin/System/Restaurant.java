@@ -1,5 +1,6 @@
 package ProyectLeFesitin.System;
 
+import LinkedList.GeneralNodes.Node;
 import ProyectLeFesitin.Lists.*;
 import model.*;
 
@@ -17,34 +18,22 @@ public class Restaurant {
         MealDoblyCricularLinkedList listMeals = new MealDoblyCricularLinkedList();
         OrderQueue orderQueue = new OrderQueue();
 
-      /*  System.out.println("Tables");
-        tables.printList();
-        System.out.println("Drinks");
-        listDrinks.printList();
-        System.out.println("Meals");
-        listMeals.printList();
-        System.out.println("Waiter");
-        listEmploy.printList();*/
-        //new ProductQueue().printQueueorder();
         do {
             System.out.println("---------------------------------\nWelcome to LE FESTIN\n------------------------------");
             Employ employ = chooseEmploy();
             System.out.println("You are : " + employ.getName());
-            System.out.println();
             System.out.println("Choose the table to attend");
             Table table = chooseTable();
             table.setAvailable(false);
             System.out.println("Enter customer name");
-            User user = new User(escanner.next());
+            User user = new User(escanner.next().toUpperCase());
             do {
 
-                System.out.println("would you like something to drink");
-                System.out.println("1. yes");
-                System.out.println("2. not");
+                System.out.println("Would you like something to drink?\t1.Yes\t2.No");
                 if ("1".equals(escanner.next())){
                     do {
                         System.out.println("Choose a drink");
-                        System.out.println("enter -1 to choose nothing");
+                        System.out.println("Enter -1 to choose nothing");
                         Drinks drink = choooseDrink();
                         table.getOrders().enqueue(drink);
                         repeat = otherDrink();
@@ -56,16 +45,15 @@ public class Restaurant {
                     table.getOrders().enqueue(meal);
                     repeat = otherMeal();
                 }while (repeat != -1);
-                System.out.println("the current order is:");
+                System.out.println("The current order is:");
                 table.getOrders().printQueueorder();
-                System.out.println("would you like to send the order?");
+                System.out.println("---------------------------------------");
                 switch (sendOrder()){
                     case 1:
                         orderQueue.setFront(table.getOrders().getFront());
                         table.getOrders().cleanQueue();
-                        System.out.println("order going out");
+                        System.out.println("-------------------\nOrder is going out\n------------------");
                         total += orderQueue.clean();
-                        System.out.println("would you like something else?");
                         somethingElse = somethingElse();
                         break;
                     case 2:
@@ -88,13 +76,22 @@ public class Restaurant {
                 total = 0;
             }
 
+            System.out.println("Do you add a observation of program?\t1.Yes\t2.No");
+            if ("1".equalsIgnoreCase(escanner.next())){
+                sendMailBox();
+                System.out.println("The message was sent");
+            }else System.out.println("Thanks");
 
+            System.out.println("Continue \t1.Yes\t2.No");
+            system = escanner.nextInt()==1?-1:2;
 
-            //tables.printList();
         }while (system == -1);
 
-    }
 
+        System.out.println("------------------MailBox-------------------");
+        mails.printStack();
+
+    }
 
 
     public static Employ chooseEmploy() {
@@ -116,7 +113,14 @@ public class Restaurant {
         tables.printList();
         System.out.println("Enter number of table ->");
         try {
-            return tables.searchByPosition(scanner.nextInt());
+            Table table = tables.searchByPosition(scanner.nextInt());
+
+            if (table.isAvailable()){
+                return table;
+            }else {
+                System.out.println("Not available");
+                return chooseTable();
+            }
         } catch (Exception e) {
             System.out.println("Error You should enter a existent number!!");
             return chooseTable();
@@ -140,9 +144,7 @@ public class Restaurant {
     public static int otherDrink(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int repeat =-1;
-        System.out.println("other drink?");
-        System.out.println("1.- yes");
-        System.out.println("2.- not");
+        System.out.println("Would you like add another drink?\t1.Yes\t2.No");
         try {
             repeat = scanner.nextInt();
             switch (repeat){
@@ -179,9 +181,7 @@ public class Restaurant {
     public static int otherMeal(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int repeat =-1;
-        System.out.println("other meal?");
-        System.out.println("1.- yes");
-        System.out.println("2.- not");
+        System.out.println("Would you like add another meal?\t1.Yes\t2.No");
         try {
             repeat = scanner.nextInt();
             switch (repeat){
@@ -204,9 +204,7 @@ public class Restaurant {
     public static int sendOrder(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int repeat =-1;
-        System.out.println("would you like to send the order?");
-        System.out.println("1.- yes");
-        System.out.println("2.- not");
+        System.out.println("Would you like to send the order?\t1.Yes\t2.Cancel order");
         try {
             repeat = scanner.nextInt();
             switch (repeat){
@@ -229,9 +227,7 @@ public class Restaurant {
     public static int somethingElse(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int repeat =-1;
-        System.out.println("would you like something else?");
-        System.out.println("1.- yes");
-        System.out.println("2.- not");
+        System.out.println("Would you like something else?\t1.Yes\t2.No");
         try {
             repeat = scanner.nextInt();
             switch (repeat){
@@ -254,9 +250,7 @@ public class Restaurant {
     public static String paymentMethod(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int repeat =-1;
-        System.out.println("enter the payment method");
-        System.out.println("1.- cash");
-        System.out.println("2.- card");
+        System.out.println("What will be  the payment method?\t1.-Cash\t2.-Card");
         try {
             repeat = scanner.nextInt();
             switch (repeat){
@@ -291,4 +285,4 @@ public class Restaurant {
 
     }
 
-    }
+}

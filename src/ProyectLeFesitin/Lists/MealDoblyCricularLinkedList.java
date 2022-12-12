@@ -9,12 +9,12 @@ import model.Meal;
 public class MealDoblyCricularLinkedList extends CircularDoblyLinkedList<Meal> {
 
     public MealDoblyCricularLinkedList() {
-        this.insert(new Meal("Milanesa", 85f, "Milanesa acompañada con frijoles", "N/A"));
-        this.insert(new Meal("Hamburguesa sencilla", 105f, "Hamburgesa con una carne, vegetales y queso", "N/A"));
-        this.insert(new Meal("Chilaquiles", 90f, "Chilaquiles con pollo, crema queso, frijoles y pan", "N/A"));
-        this.insert(new Meal("Crema de champiñon", 70f, "Crema de champiñon 200 gr", "N/A"));
-        this.insert(new Meal("Ensalada", 55f, "Lechuga, jitomate, pollo y zanahoria", "N/A"));
-        this.insert(new Meal("Enchiladas", 67f, "Enchiladas verdes con queso crema y pollo", "N/A"));
+        this.insert(new Meal("Milanesa", 85f, "Milanese accompanied with beans", "N/A"));
+        this.insert(new Meal("Hamburguesa sencilla", 105f, "Burger with meat, vegetables and cheese", "N/A"));
+        this.insert(new Meal("Chilaquiles", 90f, "Chilaquiles with chicken, cream cheese, beans and bread", "N/A"));
+        this.insert(new Meal("Crema de champiñon", 70f, "Mushroom cream 200 gr", "N/A"));
+        this.insert(new Meal("Ensalada", 55f, "Lettuce, tomato, chicken and carrot", "N/A"));
+        this.insert(new Meal("Enchiladas", 67f, "Green enchiladas with cream cheese and chicken", "N/A"));
     }
 
     @Override
@@ -38,6 +38,7 @@ public class MealDoblyCricularLinkedList extends CircularDoblyLinkedList<Meal> {
 
     @Override
     public void printList() {
+        System.out.println("------------------------------------------");
         Node<Meal> aux = this.getHead();
         int count = 1;
         while (aux.getNext() != this.getHead()){
@@ -46,5 +47,7 @@ public class MealDoblyCricularLinkedList extends CircularDoblyLinkedList<Meal> {
             count++;
         }
         System.out.println("["+count+"] "+ aux.getData().toString());
+        System.out.println("------------------------------------------");
+
     }
 }

@@ -33,6 +33,7 @@ public class EmployDoublyLinkedList extends DoublyList<Employ> {
 
     @Override
     public void printList() {
+        System.out.println("------------------------------------------");
         DoublyNode<Employ> aux = this.getHead();
         int count =1;
         while (aux != null) {
@@ -40,6 +41,7 @@ public class EmployDoublyLinkedList extends DoublyList<Employ> {
             aux = (DoublyNode<Employ>) aux.getNext();
             count++;
         }
+        System.out.println("------------------------------------------");
 
     }
 }

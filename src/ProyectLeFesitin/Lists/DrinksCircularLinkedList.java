@@ -9,11 +9,11 @@ import model.Employ;
 public class DrinksCircularLinkedList extends CircularLinkedList<Drinks> {
 
     public DrinksCircularLinkedList() {
-        this.insert(new Drinks("Jute", 100f,  "Refrescante", 415, "Coca cola", false ));
-        this.insert(new Drinks("Jumpa", 100f,  "Buena", 600, "Pepsi", false ));
-        this.insert(new Drinks("Belakatornic", 100f,  "Rica", 1000, "Joly", false ));
-        this.insert(new Drinks("Geeks", 100f,  "Sabrosa", 250, "Corona", true ));
-        this.insert(new Drinks("Chavito", 100f,  "Fria", 250, "victoria", true ));
+        this.insert(new Drinks("Jute", 100f,  "Refreshing", 415, "Coca cola", false ));
+        this.insert(new Drinks("Jumpa", 100f,  "Good", 600, "Pepsi", false ));
+        this.insert(new Drinks("Belakatornic", 100f,  "Delicious", 1000, "Joly", false ));
+        this.insert(new Drinks("Geeks", 100f,  "Tasty", 250, "Corona", true ));
+        this.insert(new Drinks("Chavito", 100f,  "Cold", 250, "victoria", true ));
     }
 
     @Override
@@ -33,6 +33,7 @@ public class DrinksCircularLinkedList extends CircularLinkedList<Drinks> {
 
     @Override
     public void printList() {
+        System.out.println("------------------------------------------");
         Node<Drinks>  aux = this.getHead();
         int count = 1;
         while (aux.getNext() != this.getHead()){
@@ -42,7 +43,7 @@ public class DrinksCircularLinkedList extends CircularLinkedList<Drinks> {
         }
         System.out.println("["+count+"] "+ aux.getData().toString() );
 
-
+        System.out.println("------------------------------------------");
 
     }
 }

@@ -27,10 +27,12 @@ public class MailboxStack extends LinkedStack<MailBox> {
 
     @Override
     public void printStack() {
+        System.out.println("------------------------------------------");
         Node<MailBox> aux = this.getTop();
         while (aux!=null){
             System.out.println(aux.getData());
             aux = aux.getNext();
         }
+        System.out.println("------------------------------------------");
     }
 }
