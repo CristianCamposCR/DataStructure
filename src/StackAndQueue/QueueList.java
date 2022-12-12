@@ -2,6 +2,7 @@ package StackAndQueue;
 
 import Interfaces.IQueue;
 import LinkedList.GeneralNodes.Node;
+import model.Product;
 
 public abstract class QueueList<T> implements IQueue<T>  {
 
